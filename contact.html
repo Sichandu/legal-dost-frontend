@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Legal Dost</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #667eea;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #764ba2;
+            margin-top: 30px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #667eea;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        .contact-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .contact-card {
+            padding: 25px;
+            background: #f8f9ff;
+            border-radius: 10px;
+            text-align: center;
+            border: 2px solid #667eea;
+        }
+        .contact-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+        .contact-card h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        .contact-card p {
+            color: #666;
+        }
+        .contact-card a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .contact-card a:hover {
+            text-decoration: underline;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 500;
+        }
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1em;
+            font-family: inherit;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        .submit-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .submit-btn:hover {
+            transform: translateY(-2px);
+        }
+        .note {
+            background: #fff3cd;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to Home</a>
+        
+        <h1>Contact Us</h1>
+        <p>हमसे संपर्क करें - We'd love to hear from you!</p>
+
+        <div class="contact-cards">
+            <div class="contact-card">
+                <div class="contact-icon">📧</div>
+                <h3>Email</h3>
+                <p>For general inquiries</p>
+                <a href="mailto:hello@legaldost.in">hello@legaldost.in</a>
+                <p style="margin-top: 10px; font-size: 0.9em; color: #999;">(Coming soon)</p>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-icon">💬</div>
+                <h3>Feedback</h3>
+                <p>Share your experience</p>
+                <a href="mailto:feedback@legaldost.in">feedback@legaldost.in</a>
+                <p style="margin-top: 10px; font-size: 0.9em; color: #999;">(Coming soon)</p>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-icon">🤝</div>
+                <h3>Partnership</h3>
+                <p>Collaborate with us</p>
+                <a href="mailto:partner@legaldost.in">partner@legaldost.in</a>
+                <p style="margin-top: 10px; font-size: 0.9em; color: #999;">(Coming soon)</p>
+            </div>
+        </div>
+
+        <h2>Send Us a Message</h2>
+        <p>Have questions, feedback, or want to report an issue? Fill out the form below:</p>
+
+        <div class="note">
+            <strong>⚠️ Important:</strong> This contact form is for general inquiries only. We do NOT provide legal advice via email. For legal matters, please consult a qualified lawyer.
+        </div>
+
+        <form id="contactForm" onsubmit="handleSubmit(event)">
+            <div class="form-group">
+                <label for="name">Your Name *</label>
+                <input type="text" id="name" name="name" required placeholder="Enter your name">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+            </div>
+
+            <div class="form-group">
+                <label for="category">Category *</label>
+                <select id="category" name="category" required>
+                    <option value="">Select category</option>
+                    <option value="feedback">General Feedback</option>
+                    <option value="bug">Report a Bug</option>
+                    <option value="feature">Feature Request</option>
+                    <option value="partnership">Partnership Inquiry</option>
+                    <option value="lawyer">I'm a Lawyer</option>
+                    <option value="investor">Investment Opportunity</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Message *</label>
+                <textarea id="message" name="message" required placeholder="Write your message here..."></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+
+        <div id="formResponse" style="margin-top: 20px; display: none;"></div>
+
+        <h2>Frequently Asked Questions</h2>
+        
+        <h3>📌 How do I use Legal Dost?</h3>
+        <p>Simply upload your legal notice (image or PDF) on the <a href="index.html">home page</a>. Our AI will analyze it and provide explanation in simple Hindi within 2 minutes.</p>
+
+        <h3>📌 Is the service really free?</h3>
+        <p>Yes! During our beta testing phase, Legal Dost is completely free to use. We may introduce affordable pricing in the future, but we'll always have a free tier.</p>
+
+        <h3>📌 Can Legal Dost replace a lawyer?</h3>
+        <p>No. Legal Dost is an information tool that helps you understand legal notices. We strongly recommend consulting a qualified lawyer for legal advice and action.</p>
+
+        <h3>📌 What types of notices do you support?</h3>
+        <p>We currently support: GST notices, court summons, employment letters, consumer complaints, traffic challans, property disputes, income tax notices, and more. Our AI continues to learn and improve.</p>
+
+        <h3>📌 Is my data safe?</h3>
+        <p>Yes. We take data security seriously. Your uploaded documents are processed securely and not permanently stored. Read our <a href="privacy.html">Privacy Policy</a> for details.</p>
+
+        <h3>📌 How accurate is the AI?</h3>
+        <p>Our AI is continuously improving, but it's not perfect. Always verify AI-generated information with a legal professional before taking action.</p>
+
+        <h3>📌 Can I connect with a lawyer through Legal Dost?</h3>
+        <p>We're building a network of affordable lawyers. This feature is coming soon!</p>
+
+        <h3>📌 I found a bug. How do I report it?</h3>
+        <p>Please use the contact form above and select "Report a Bug" category. We appreciate your help in making Legal Dost better!</p>
+
+        <h2>For Lawyers</h2>
+        <p>Are you a practicing lawyer interested in partnering with Legal Dost to provide affordable consultations to our users?</p>
+        <p>We're looking for qualified lawyers with:</p>
+        <ul>
+            <li>3+ years of practice experience</li>
+            <li>Specialization in GST, employment, consumer, or civil law</li>
+            <li>Comfort with Hindi language</li>
+            <li>Interest in tech-enabled legal services</li>
+        </ul>
+        <p>Please email us at: <strong>lawyers@legaldost.in</strong> (coming soon)</p>
+
+        <h2>For Investors & Partners</h2>
+        <p>Interested in supporting Legal Dost's mission to democratize legal access in India?</p>
+        <p>Email: <strong>partner@legaldost.in</strong> (coming soon)</p>
+
+        <h2>Social Media</h2>
+        <p>Follow us for updates, legal tips, and more:</p>
+        <div class="contact-cards" style="margin-top: 20px;">
+            <div class="contact-card">
+                <div class="contact-icon">🐦</div>
+                <h3>Twitter</h3>
+                <a href="#">@LegalDost</a>
+                <p style="font-size: 0.9em; color: #999;">(Coming soon)</p>
+            </div>
+            <div class="contact-card">
+                <div class="contact-icon">💼</div>
+                <h3>LinkedIn</h3>
+                <a href="#">Legal Dost</a>
+                <p style="font-size: 0.9em; color: #999;">(Coming soon)</p>
+            </div>
+            <div class="contact-card">
+                <div class="contact-icon">📸</div>
+                <h3>Instagram</h3>
+                <a href="#">@legaldost.in</a>
+                <p style="font-size: 0.9em; color: #999;">(Coming soon)</p>
+            </div>
+        </div>
+
+        <p style="margin-top: 40px;"><a href="index.html" class="back-link">← Back to Home</a></p>
+    </div>
+
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData);
+            
+            // Show response (since we don't have backend email yet)
+            const responseDiv = document.getElementById('formResponse');
+            responseDiv.style.display = 'block';
+            responseDiv.innerHTML = `
+                <div style="background: #d1fae5; padding: 20px; border-radius: 8px; border-left: 4px solid #059669;">
+                    <h3 style="color: #059669; margin-top: 0;">✅ Message Received!</h3>
+                    <p>Thank you for contacting Legal Dost. We've received your message.</p>
+                    <p><strong>Note:</strong> During beta phase, we're collecting messages but don't have automated email responses yet. We'll get back to you soon!</p>
+                    <p style="margin-bottom: 0; font-size: 0.9em; color: #666;">
+                        Name: ${data.name}<br>
+                        Email: ${data.email}<br>
+                        Category: ${data.category}
+                    </p>
+                </div>
+            `;
+            
+            // Reset form
+            event.target.reset();
+            
+            // Scroll to response
+            responseDiv.scrollIntoView({ behavior: 'smooth' });
+            
+            // In production, you would send this to your backend
+            // fetch('/api/contact', { method: 'POST', body: JSON.stringify(data) })
+        }
+    </script>
+</body>
+</html>
