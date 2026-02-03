@@ -362,11 +362,64 @@
                 gap: 15px;
             }
         }
+
+        /* Hamburger icon */
+.hamburger {
+    display: none;
+    font-size: 1.8em;
+    cursor: pointer;
+    color: #667eea;
+}
+
+/* Mobile Nav */
+@media (max-width: 600px) {
+
+    .top-nav {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* Hide text, show only icon */
+    .logo-text {
+        display: none;
+    }
+
+    .logo-icon {
+        font-size: 1.6em;
+    }
+
+    /* Show hamburger */
+    .hamburger {
+        display: block;
+    }
+
+    /* Hide links initially */
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        background: white;
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        z-index: 1000;
+    }
+
+    /* When active */
+    .nav-links.active {
+        display: flex;
+    }
+}
+
     </style>
 </head>
 <body>
     <!-- Top Navigation -->
-    <nav class="top-nav">
+    <!-- <nav class="top-nav">
         <div class="logo">⚖️ Legal Dost</div>
         <div class="nav-links">
             <a href="index.html">Home</a>
@@ -376,7 +429,26 @@
             <a href="terms.html">Terms</a>
             <a href="contact.html">Contact</a>
         </div>
-    </nav>
+    </nav> -->
+    <!-- Top Navigation -->
+<nav class="top-nav">
+    <div class="logo">
+        <span class="logo-icon">⚖️</span>
+        <span class="logo-text">Legal Dost</span>
+    </div>
+
+    <div class="hamburger" id="hamburger">☰</div>
+
+    <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="disclaimer.html">Disclaimer</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="contact.html">Contact</a>
+    </div>
+</nav>
+
 
     <div class="container">
         <div class="header">
@@ -613,6 +685,15 @@
             resultSection.classList.add('active');
             resultSection.scrollIntoView({ behavior: 'smooth' });
         }
+
+        // Mobile hamburger toggle
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
+
+hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
+
     </script>
 </body>
 </html>
